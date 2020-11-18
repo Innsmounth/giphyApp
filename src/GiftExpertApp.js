@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 
 
-const GifExpertApp = () => {
+const GiftExpertApp = () => {
 
 const [categoria, setCategoria] = useState(['One Punch Man','Samurai X', 'Dragon Ball']);
 
@@ -13,8 +13,6 @@ const handleAdd = () =>{
     setCategoria((cat2)=>['HunterxHunter','otro',...categoria])
 }
 
-
-    
     return(
         <>
             <h2>GiftExpertAPP</h2>
@@ -30,5 +28,5 @@ const handleAdd = () =>{
 }
 
 export {
-    GifExpertApp as default
+    GiftExpertApp as default
 }
