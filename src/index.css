@@ -9,3 +9,20 @@ body{
 
 }
 
+input{
+    color:gray;
+    font-size: 1.2;
+    width: 100%;
+}
+
+input:hover{
+    background-color: blue
+}
+
+/* input:enabled{
+    background-color:red    
+} */
+
+/* input::selection{
+    background-color: blue
+} */
