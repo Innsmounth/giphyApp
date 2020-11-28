@@ -1,32 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import { getGif } from '../helpers/getGif';
 import GifGridItem from './GifGridItem';
 
 const GifGrid = ({valor}) => {
     const [images, setImages] = useState([])
     
     // const [count, setCount] = useState(0);
-
-
     useEffect(()=>{ //Si no se usa el useEffect cada que se ejecuta incrementar boton se renderiza toda la pantalla, si se usa se renderiza la funcion(es) especifica una sola vez y las demas siguen renderizandose  
-        getGif();
+        getGif(valor)
+            .then(setImages);
         // console.log(images)
-    },[]);
+    },[valor]);
+    
+    // Ha y tiene un segundo parametro que sería la 
+    // lista de parámetros de los que depende el efecto y, lo que indica, es que 
+    // cuando estos parámetros no cambien entonces no volverá a renderizar el efecto.
 
-    const getGif = async() =>{
-        
-        const url = `http://api.giphy.com/v1/gifs/search?api_key=xTEP09ggxEaxyFAAnogp9Pt441VOS2XS&q=${encodeURI(valor)}&limit=5`
-        const response =  await fetch(url)
-        const {data} = await response.json();
-        // console.log(data.data)
-        const gifs = data.map( img =>{
-            return {
-                id: img.id,
-                title: img.title,
-                url: img.images?.original.url
-            }
-        });
-        setImages(gifs)
-    }
 
     return (       
         <>

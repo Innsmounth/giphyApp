@@ -3,6 +3,7 @@ import  {AddCategory}  from './components/AddCategory';
 import GifGrid from './components/GifGrid';
 
 const GiftExpertApp = () => {
+    console.log('a verrrrrrrrr')
 
 const [categoria, setCategoria] = useState(['One Punch Man']);
 
