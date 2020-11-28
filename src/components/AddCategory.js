@@ -16,7 +16,7 @@ export const AddCategory = ({setCategoria}) => {
 
         setCategoria((categoriaAnterior)=> {
             // console.log(categoriaAnterior,'<---------- categoria')
-            return [...categoriaAnterior,inputValue]
+            return [inputValue,...categoriaAnterior]
         });
         setInputValue('')
     }
