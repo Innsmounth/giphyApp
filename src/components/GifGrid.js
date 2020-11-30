@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { getGif } from '../helpers/getGif';
 import GifGridItem from './GifGridItem';
 
-const GifGrid = ({valor}) => {
+const GifGrid = ({valor}) => { //usado en GiftExpertApp
     const [images, setImages] = useState([])
     
     // const [count, setCount] = useState(0);
     useEffect(()=>{ //Si no se usa el useEffect cada que se ejecuta incrementar boton se renderiza toda la pantalla, si se usa se renderiza la funcion(es) especifica una sola vez y las demas siguen renderizandose  
         getGif(valor)
-            .then(setImages);
-        // console.log(images)
+            .then(img => setImages(img)); // setImages
     },[valor]);
     
-    // Ha y tiene un segundo parametro que sería la 
+
+    
+    // Tiene un segundo parametro que sería la 
     // lista de parámetros de los que depende el efecto y, lo que indica, es que 
     // cuando estos parámetros no cambien entonces no volverá a renderizar el efecto.
-
 
     return (       
         <>
