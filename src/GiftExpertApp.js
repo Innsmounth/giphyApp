@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import  {AddCategory}  from './components/AddCategory';
 import GifGrid from './components/GifGrid';
 
+
 const GiftExpertApp = () => {
     console.log('Inicia la aplicacion -->')
 
 const [categoria, setCategoria] = useState(['One Punch Man']);
+
 
 // const handleAdd = () =>{
 //     // setCategoria([...categoria,'Hunter'])
