@@ -1,22 +1,27 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { getGif } from "../helpers/getGif"
 
 
-export const useFetchGif= () =>{
+export const useFetchGif= (valor) =>{
 
     const [state, setState] = useState({
         data :[],
         loading: true
     })
 
-    setTimeout(() => {
-        setState({
-            data:[1,2,3,4,5,6],
-            loading:false
+    useEffect(()=>{
+        getGif(valor)
+        .then(img => {
+            setTimeout(() => {
+                setState({
+                data: img,
+                loading:false
+                })
+            }, 3000);
         })
-    },3000)
-
+        
+    },[valor])
 
     return state //actual sin modificaion data = [] y loading = true
-
 
 }
