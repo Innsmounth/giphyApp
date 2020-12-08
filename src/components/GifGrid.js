@@ -4,11 +4,12 @@ import GifGridItem from './GifGridItem';
 
 const GifGrid = ({valor}) => { //usado en GiftExpertApp
     const {loading,data:images} = useFetchGif(valor);
+    console.log(images, '<---- ID IMAGEN')
     
     return (       
         <>
         <h2>{valor}</h2>   
-        {loading && 'cargando... '}
+        {loading && <p className='animate__animated animate__bounce'>Cargando</p>}
             {<div className="card-grid">
                     {images.map(img => (
                     <GifGridItem 
